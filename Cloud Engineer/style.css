@@ -1,0 +1,171 @@
+body {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  margin: 0;
+}
+
+.container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+}
+
+.container h1{
+  font-family: 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.level-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#question-area {
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-height: 100px;
+  margin-bottom: 10px; /* Add margin below question area */
+}
+
+#question-area p {
+    margin-bottom: 10px;
+}
+
+#next-button {
+  padding: 10px 20px;
+  margin:auto;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+#next-button:hover {
+  background-color: #0056b3;
+}
+
+#score-area {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.2em;
+}
+
+#final-score {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.home-button {
+  position: absolute;
+  top: 40px;
+  left: 35px;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  z-index: 2;
+}
+
+.home-button:hover {
+  background-color: #0056b3;
+}
+
+#user-answer {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-height: 40px;
+  text-align: left;
+  white-space: pre-wrap;
+}
+
+#feedback-area {
+  text-align: left;
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#feedback-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+#feedback-list li {
+  margin-bottom: 5px;
+}
+
+#record-container { /* Style the container */
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center horizontally */
+  margin-bottom: 20px; /* Add some space below */
+}
+
+#record-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: none;
+  background-color: #5e63f0; /* Blue background */
+  border: none;
+  cursor: pointer;
+  opacity: 1.2;
+  color: white;
+  margin-top: 55px;
+  transition: opacity 0.3s;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  display: flex; /* Use flexbox for centering */
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+}
+
+#record-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+#record-button:disabled {
+    opacity: 0.5; /* Less opaque when disabled */
+    cursor: default; /* Change cursor to default */
+}
+
+#record-button.recording {
+  background-color: #f00; /* Change background color to red while recording */
+  /* Add any other styles you want */
+}
+

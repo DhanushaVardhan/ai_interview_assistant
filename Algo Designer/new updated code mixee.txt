@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Algorithm Designer Interview Prep</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="../index.html" class="home-button">Home</a>
+  <div class="container">
+    <h1>Algorithm Designer Interview Prep</h1>
+    <div class="level-buttons">
+      <button id="fresher">Fresher</button>
+      <button id="medium">Medium</button>
+      <button id="experienced">Experienced</button>
+      <button id="professional">Professional</button>
+    </div>
+    <div id="question-area" style="display: none;"></div>
+    <button id="next-button" style="display: none;">Next/Skip</button>
+    <div id="score-area" style="display: none;">
+      <h2>Your Score: <span id="final-score">0</span></h2>
+    </div>
+  </div>
+
+  <script>
+    const algorithmDesignerQuestions = {
+      "fresher": [
+        { id: 1, question: "What is an algorithm, and why is it important in computer science?" },
+        { id: 2, question: "Explain the difference between a greedy algorithm and a dynamic programming algorithm." },
+        { id: 3, question: "What is the time complexity of a linear search algorithm?" },
+        // ... (rest of your fresher questions)
+      ],
+      "medium": [
+        { id: 1, question: "How do you decide which algorithm to use for a given problem?" },
+        { id: 2, question: "What is the difference between time complexity and space complexity?" },
+        // ... (rest of your medium questions)
+      ],
+      "experienced": [
+        { id: 1, question: "How would you optimize an algorithm to handle large datasets efficiently?" },
+        { id: 2, question: "Can you explain the concept of 'memoization' in depth and when it should be used?" },
+        // ... (rest of your experienced questions)
+      ],
+      "professional": [
+        { id: 1, question: "How do you approach designing algorithms for systems that need to scale horizontally?" },
+        { id: 2, question: "What is the importance of algorithmic trade-offs in large-scale systems, and how do you prioritize them?" },
+        // ... (rest of your professional questions)
+      ]
+    };
+
+    let score = 0;
+    let currentQuestionIndex = 0;
+    let questionsToDisplay = [];
+    let currentLevel = null;
+
+    const levelButtons = document.querySelectorAll('.level-buttons button');
+    const questionArea = document.getElementById('question-area');
+    const nextButton = document.getElementById('next-button');
+    const scoreArea = document.getElementById('score-area');
+    const finalScoreSpan = document.getElementById('final-score');
+
+
+    levelButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        currentLevel = button.id;
+        currentQuestionIndex = 0;
+        questionsToDisplay = getRandomQuestions(algorithmDesignerQuestions[currentLevel], 10);
+
+        levelButtons.forEach(b => {
+          if (b.id !== currentLevel) {
+            b.style.display = 'none';
+          }
+        });
+
+        questionArea.style.display = 'block';
+        nextButton.style.display = 'block';
+        scoreArea.style.display = 'none'; // Hide score area initially
+        displayQuestion();
+      });
+    });
+
+    nextButton.addEventListener('click', () => {
+      // Simulate speech-to-text and scoring (REPLACE THIS WITH YOUR ACTUAL SPEECH-TO-TEXT AND SCORING LOGIC)
+      const randomScore = Math.floor(Math.random() * 10) + 1; // Random score between 1 and 10 (example)
+      score += randomScore;
+      console.log("Current Score: " + score); // Log the score for debugging
+
+      currentQuestionIndex++;
+      if (currentQuestionIndex < questionsToDisplay.length) {
+        displayQuestion();
+      } else {
+        endInterviewSession();
+      }
+    });
+
+    function getRandomQuestions(questions, numQuestions) {
+      const shuffled = questions.slice();
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      return shuffled.slice(0, numQuestions);
+    }
+
+    function displayQuestion() {
+      if (currentQuestionIndex < questionsToDisplay.length) {
+        questionArea.innerHTML = `<p>${questionsToDisplay[currentQuestionIndex].question}</p>`;
+      }
+    }
+
+    function endInterviewSession() {
+      finalScoreSpan.textContent = score;
+      scoreArea.style.display = 'block';
+
+      setTimeout(() => {
+        const confirmed = confirm(`Interview session completed. Your final score is ${score}. Redirect to the base page?`);
+
+        if (confirmed) {
+          const basePath = "../index.html";
+          window.location.href = basePath;
+        } else {
+          questionArea.style.display = 'none';
+          nextButton.style.display = 'none';
+          scoreArea.style.display = 'none';
+          levelButtons.forEach(b => b.style.display = 'block');
+          currentLevel = null;
+          score = 0;
+          currentQuestionIndex = 0;
+        }
+      }, 7000);
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+CSS
+-----
+
+
+
+
+body {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  margin: 0;
+}
+
+.container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative; /* For positioning the home button */
+}
+
+.level-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#question-area {
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-height: 100px;
+  margin-bottom: 10px;
+}
+
+#question-area p {
+  margin-bottom: 10px;
+}
+
+#next-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#next-button:hover {
+  background-color: #0056b3;
+}
+
+#score-area {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.2em;
+}
+
+#final-score {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.home-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  z-index: 2;
+}
+
+.home-button:hover {
+  background-color: #0056b3;
+}

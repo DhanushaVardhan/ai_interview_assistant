@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Assistant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">Interview Assistant</div>
+        <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="index1.html" class="btn">Get Started</a>
+    </nav>
+</header>
+
+<section id="home" class="hero">
+    <h1>Practice Better, <br>Interview Easier</h1>
+    <p>Prepare for job interviews with <strong>real questions</strong> asked at real companies.</p><br>
+    <a href="index1.html" class="btn">Get Started</a>
+</section>
+
+<section id="features">
+    <div class="feature-card">
+        <div class="icon"><img src="icon1.svg" alt="Company-optimized"></div>
+        <h3>Company-optimized</h3>
+        <p>Each company interviews differently, so we optimize the interview questions to the company.</p>
+    </div>
+
+    <div class="feature-card">
+        <div class="icon"><img src="icon2.svg" alt="Realtime Transcriptions"></div>
+        <h3>Realtime Transcriptions</h3>
+        <p>Our transcriptions have a latency of less than 2 seconds, ensuring that the AI keeps up with the conversation.</p>
+    </div>
+
+    <div class="feature-card">
+        <div class="icon"><img src="icon3.svg" alt="Saved Transcripts"></div>
+        <h3>Saved Transcripts</h3>
+        <p>All of your interviews are transcribed and saved for future reference. You'd be surprised how helpful this one is.</p>
+    </div>
+
+    <div class="feature-card">
+        <div class="icon"><img src="icon4.svg" alt="AI Learns Over Time"></div>
+        <h3>AI Learns Over Time</h3>
+        <p>Our AI learns how you answer questions and improves over time to give better feedback.</p>
+    </div>
+
+    <div class="feature-card">
+        <div class="icon"><img src="icon5.svg" alt="Multi-device"></div>
+        <h3>Multi-device</h3>
+        <p>Smooth and intuitive user experience across different devices.</p>
+    </div>
+
+    <div class="feature-card">
+        <div class="icon"><img src="icon6.svg" alt="More Coming Soon"></div>
+        <h3>More Coming Soon</h3>
+        <p>We're just getting started. We push frequent updates to enhance your experience.</p>
+    </div>
+</section>
+
+<section id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>What is this platform about?</span>
+                <button class="faq-toggle">+</button>
+            </div>
+            <div class="faq-answer">
+                This platform helps in analyzing student responses using AI models and provides feedback based on voice and keywords.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How accurate are the AI-generated scores?</span>
+                <button class="faq-toggle">+</button>
+            </div>
+            <div class="faq-answer">
+                Our AI models are trained on extensive datasets, ensuring high accuracy, but we always recommend human verification.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Can I use this platform for mock interviews?</span>
+                <button class="faq-toggle">+</button>
+            </div>
+            <div class="faq-answer">
+                Yes, you can use our platform for mock interviews, and it provides instant feedback to improve your performance.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Is my data secure?</span>
+                <button class="faq-toggle">+</button>
+            </div>
+            <div class="faq-answer">
+                Yes, we ensure complete data privacy with encryption, and your responses are never shared without permission.
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <form id="contact-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2025 Interview Assistant. All Rights Reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+<script>
+var s = document.createElement("script");
+s.src = "https://builder.corover.ai/params/widget/corovercb.lib.min.js?appId=1a52ae61-99c1-478e-8326-e823e359c471";
+s.type = "text/javascript";
+document.getElementsByTagName("body")[0].appendChild(s);
+</script>
+</body>
+</html>
